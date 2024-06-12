@@ -19,8 +19,8 @@ function App() {
       <h1 className="bg-orange-400 text-black p-6 rounded-2xl">
         Intro to tailwind
       </h1>
-      <Card userName="Yash" />
-      {/* <Card /> */}
+      <Card userName="Yash" btnText="Know more" />
+      <Card userName="Swara" btnText="Visit me" />
     </>
   );
 }
