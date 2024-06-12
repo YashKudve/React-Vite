@@ -9,33 +9,61 @@ function App() {
       style={{ backgroundColor: color }}
     >
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-        <div className="flex flex-wrap justify-center gap-3 shadow-xl bg-white px-3 py-2 rounded-2xl">
+        <div className="flex flex-wrap justify-center gap-5 shadow-xl bg-white px-3 py-2 rounded-2xl">
           <button
             className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
             style={{ backgroundColor: "red" }}
+            onClick={() => setColor("red")}
           >
             Red
           </button>
 
           <button
             className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "red" }}
+            style={{ backgroundColor: "green" }}
+            onClick={() => setColor("green")}
           >
-            Red
+            Green
           </button>
 
           <button
             className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "red" }}
+            style={{ backgroundColor: "blue" }}
+            onClick={() => setColor("blue")}
           >
-            Red
+            Blue
+          </button>
+
+          <button
+            className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            style={{ backgroundColor: "Yellow" }}
+            onClick={() => setColor("yellow")}
+          >
+            Yellow
           </button>
 
           <button
             className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "red" }}
+            style={{ backgroundColor: "Violet" }}
+            onClick={() => setColor("violet")}
           >
-            Red
+            Violet
+          </button>
+
+          <button
+            className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            style={{ backgroundColor: "Brown" }}
+            onClick={() => setColor("brown")}
+          >
+            Brown
+          </button>
+
+          <button
+            className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+            style={{ backgroundColor: "Cyan" }}
+            onClick={() => setColor("cyan")}
+          >
+            Cyan
           </button>
         </div>
       </div>
