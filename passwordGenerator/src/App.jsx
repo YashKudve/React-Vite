@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { Checkmark } from "react-checkmark";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -29,8 +30,18 @@ function App() {
   }, [length, numAllowed, charAllowed, passwordGenerator]);
 
   // useRef hook
-
   const passwordRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(password);
+
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
+  }, [password]);
 
   return (
     <>
@@ -44,10 +55,14 @@ function App() {
           <input
             type="text"
             value={password}
-            className="w-full py-1 px-3 outline-none"
+            className="w-full py-1 px-3 outline-none text-black"
             readOnly
+            ref={passwordRef}
           />
-          <button className="outline-none bg-orange-500 text-gray-700 p-2 shrink-0">
+          <button
+            onClick={copyPasswordToClipboard}
+            className="outline-none bg-orange-500 text-gray-700 p-2 shrink-0"
+          >
             Copy
           </button>
         </div>
@@ -92,6 +107,11 @@ function App() {
           </div>
         </div>
       </div>
+      {showPopup && (
+        <div className="fixed left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-5 p-3 text-green-600 font-extrabold text-lg text-center rounded w-1/2">
+          <Checkmark size="24px" /> Copied to Clipboard
+        </div>
+      )}
     </>
   );
 }
