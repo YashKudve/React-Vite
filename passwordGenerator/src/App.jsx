@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -6,6 +6,7 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
+  //useCallback hook
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
@@ -22,9 +23,15 @@ function App() {
     setPassword(pass);
   }, [length, numAllowed, charAllowed, setPassword]);
 
+  // useEffect hook
   useEffect(() => {
     passwordGenerator();
   }, [length, numAllowed, charAllowed, passwordGenerator]);
+
+  // useRef hook
+
+  const passwordRef = useRef(null);
+
   return (
     <>
       <h1 className="text-4xl text-center text-white font-extrabold">
