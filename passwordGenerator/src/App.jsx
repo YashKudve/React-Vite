@@ -16,11 +16,15 @@ function App() {
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
 
-      pass = str.charAt(char);
+      pass += str.charAt(char);
     }
 
     setPassword(pass);
   }, [length, numAllowed, charAllowed, setPassword]);
+
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, numAllowed, charAllowed, passwordGenerator]);
   return (
     <>
       <h1 className="text-4xl text-center text-white font-extrabold">
@@ -46,7 +50,7 @@ function App() {
             <input
               type="range"
               min={6}
-              max={100}
+              max={50}
               value={length}
               className="cursor-pointer"
               onChange={(e) => {
