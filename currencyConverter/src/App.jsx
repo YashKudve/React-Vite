@@ -1,7 +1,11 @@
+import InputBox from "./components/InputBox";
+
 function App() {
   return (
     <>
-      <h1 className="bg-orange-500 text-red-800">Currency Converter</h1>
+      <h1 className="text-center font-extrabold text-[48px]">
+        Currency Converter
+      </h1>
     </>
   );
 }
