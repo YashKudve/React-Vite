@@ -36,11 +36,16 @@ import Contact from "./Components/Contact.jsx";
 // Another method for routing
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Home />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route path="" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+    </Route>
+  )
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    {/* <App /> */}
   </React.StrictMode>
 );
