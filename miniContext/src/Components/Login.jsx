@@ -20,13 +20,14 @@ function Login() {
         onChange={(e) => setuserName(e.target.value)}
         placeholder="Username"
       />
+      <br />
       <input
-        type="text"
+        type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
-      />
-
+      />{" "}
+      <br />
       <button onClick={handleSubmit}>Login</button>
     </div>
   );
