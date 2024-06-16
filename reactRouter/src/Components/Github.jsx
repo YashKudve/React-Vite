@@ -17,7 +17,11 @@ function Github() {
       <h1 className="text-center font-bold text-3xl m-10 p-10">
         Github followers : {data.followers}
       </h1>
-      <img src={data.avatar_url} alt="Github Profile picture" />
+      <img
+        className="ml-[40%]"
+        src={data.avatar_url}
+        alt="Github Profile picture"
+      />
     </>
   );
 }
