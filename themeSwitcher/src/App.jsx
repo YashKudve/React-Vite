@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { ThemeProvider } from "./contexts/theme";
 
@@ -12,6 +12,14 @@ function App() {
   const darkTheme = () => {
     setThemeMode("dark");
   };
+
+  //actual change in theme
+
+  useEffect(() => {
+    document.querySelector("html").classList.remove("light", "dark");
+    document.querySelector("html").classList.add(themeMode);
+  }, []);
+
   return (
     <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
       <div className="flex flex-wrap min-h-screen items-center">
